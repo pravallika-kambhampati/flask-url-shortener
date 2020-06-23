@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<div class="container">
+your url: {{ original_url }} <br>
+shortened url:     
+
+<a href="{{ url_for('short.redirect_to_url', short_url=new_link, _external=True ) }}">{{ url_for('short.redirect_to_url', short_url=new_link, _external=True ) }}</a>
+<br>
+<form action="/">
+    <div class="buttons">
+      <button class="button is-primary is-light">Got another link?</button>
+    </div>
+  </form>
+</div>
+
+
+{% endblock %}

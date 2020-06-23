@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+
+<div class="container">
+    Paste your url here: <br>
+    <form method="POST" action="{{ url_for('short.add_link') }}">
+        <input type="text" name="original_url" >
+        <input type="submit">
+    
+    
+    </form>
+    
+    
+</div>
+{% endblock %}
