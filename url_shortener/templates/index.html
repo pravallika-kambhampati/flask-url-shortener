@@ -1,13 +1,27 @@
 {% extends "base.html" %}
+{% block script %}
+  <script>
+       document.addEventListener('DOMContentLoaded', () => {
+
+document.querySelector('#submit').disabled = true;
+
+document.querySelector('#url').onkeyup = () => {
+    if (document.querySelector('#url').value.length > 0)
+        document.querySelector('#submit').disabled = false;
+    else
+        document.querySelector('#submit').disabled = true;
+};
+});
+  </script>
+{% endblock %}
 {% block content %}
 <br>
 
 <div class="container">
     Paste your url here: <br>
     <form method="POST" action="{{ url_for('short.add_link') }}">
-        <input type="text" name="original_url" >
-        <input type="submit">
-    
+        <input id="url" type="text" name="original_url" >
+        <input id="submit" type="submit">
     
     </form>
     
